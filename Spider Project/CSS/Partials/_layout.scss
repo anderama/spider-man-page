@@ -1,0 +1,129 @@
+.container {
+    overflow: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 36px 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.container-item-1 {
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container-item-2 {
+
+}
+
+.spiderman {
+    width: 150%;
+    transform: translate3d(-170px,0,0);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 3px;
+    margin: 16px 0;
+
+    background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
+    border-radius: 3px;
+    transform: skewX(-10deg);
+    text-transform: uppercase;
+    
+    position: relative;
+    transition: .7s ease;
+    
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        opacity: 0;
+        width: 30%;
+        height: 70%;
+        transition: .7s ease;
+        
+        border-radius: 3px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+    }
+    
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        opacity: 0;
+        width: 30%;
+        height: 70%;
+        transition: .7s ease;
+        
+        border-radius: 3px;
+        border-bottom: 3px solid #fff;
+        border-right: 3px solid #fff;
+    }
+    
+    &:hover {
+        &::before, &::after {
+            opacity: 1;
+        }
+        transform: skewX(-10deg) scale(1.05);
+    }
+}
+
+.btn-secondary {
+    display: inline-block;
+
+    padding: 10px 32px;
+    margin-left: 14px;
+    border-radius: 3px;
+
+    transform: skewX(-10deg);
+    transition: .7s ease;
+
+    text-transform: uppercase;
+    background: transparent;
+
+    position: relative;
+
+    border: 2px solid $red;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+
+        z-index: -1;
+        transition: .7s ease;
+        width: 0%;
+        height: 103%;
+
+        background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
+    }
+
+    &:hover {
+        &::after {
+            width: 102%;
+        }
+    }
+}
+
+.brands {
+    margin: 16px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.content {
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
