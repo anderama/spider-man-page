@@ -3,6 +3,10 @@ header {
     padding-top: 16px;
 }
 
+.border {
+    border: 1px solid red;
+}
+
 .logo {
     max-width: 88px;
     margin-left: 14px;
@@ -31,6 +35,10 @@ header {
 
     li {
         margin-left: 24px;
+    }
+
+    @include responsive() {
+        display: none;
     }
 }
 
@@ -69,6 +77,42 @@ header {
     }
 }
 
+.bx {
+    width: 40px;
+    height: 40px;
+    display: none;
+    position: relative;
+    cursor: pointer;
+
+    @include responsive() {
+        display: block;
+    }
+
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 33%;
+        left: 12%;
+        width: 75%;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $white;
+      }
+
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 57%;
+        left: 12%;
+        width: 75%;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $white;
+    }
+}
+
 .nav-social {
     display: flex;
     margin-right: 16px;
@@ -88,5 +132,9 @@ header {
                 transform: translate3d(0,-3px,0);
             }
         }
+    }
+
+    @include responsive() {
+        display: none;
     }
 }
